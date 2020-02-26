@@ -1,0 +1,13 @@
+# action.yml
+name: 'shellcheck-action'
+description: 'Run Shellcheck'
+inputs:
+  command: # id of input
+    description: 'command to be executed inside Shellcheck image'
+    required: true
+    default: 'exit 1'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.command }}
